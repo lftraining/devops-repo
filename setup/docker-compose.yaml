@@ -10,7 +10,7 @@ volumes:
 
 services:
   jenkins:
-    image: jenkins/jenkins:2.462-jdk11
+    image: jenkins/jenkins:latest
     build:
       context: .
       dockerfile: Dockerfile
