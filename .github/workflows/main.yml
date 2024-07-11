@@ -2,9 +2,9 @@ name: Test Docker Compose Setup
 
 on:
   push:
-    branches: [ master ]
+    branches: [ dev ]
   pull_request:
-    branches: [ master ]
+    branches: [ dev ]
   schedule:
     - cron: '0 0 * * 0'  # Run weekly on Sundays at midnight UTC
 
