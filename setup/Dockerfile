@@ -14,3 +14,4 @@ RUN curl -L "https://github.com/docker/compose/releases/download/`curl -fsSLI -o
     ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 USER jenkins
 RUN jenkins-plugin-cli --plugins blueocean
+RUN jenkins-plugin-cli --plugins json-path-api:2.9.0-58.v62e3e85b_a_655
