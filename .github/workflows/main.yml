@@ -36,7 +36,7 @@ jobs:
     - name: Check if services are running
       working-directory: ./setup
       run: |
-        if docker-compose ps | grep -q "Up"; then
+        if docker compose ps | grep -q "Up"; then
           echo "Services are up and running."
         else
           echo "Error: Services failed to start properly."
@@ -55,7 +55,7 @@ jobs:
     - name: Test Docker service
       working-directory: ./setup
       run: |
-        if docker-compose exec -T docker docker info > /dev/null 2>&1; then
+        if docker compose exec -T docker docker info > /dev/null 2>&1; then
           echo "Docker service is functioning properly."
         else
           echo "Error: Docker service is not functioning as expected."
