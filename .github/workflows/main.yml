@@ -28,7 +28,7 @@ jobs:
 
     - name: Start Docker Compose services
       working-directory: ./setup
-      run: docker-compose up -d
+      run: docker compose up -d
 
     - name: Wait for services to be ready
       run: sleep 30
@@ -65,4 +65,4 @@ jobs:
     - name: Clean up
       if: always()
       working-directory: ./setup
-      run: docker-compose down -v
+      run: docker compose down -v
