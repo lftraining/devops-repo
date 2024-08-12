@@ -1,4 +1,4 @@
-FROM jenkins/jenkins:2.440.2-jdk11
+FROM jenkins/jenkins:2.452.3-lts-jdk21
 USER root
 RUN apt-get update && apt-get install -y apt-transport-https \
        ca-certificates curl gnupg2 \
@@ -14,3 +14,5 @@ RUN curl -L "https://github.com/docker/compose/releases/download/`curl -fsSLI -o
     ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
 USER jenkins
 RUN jenkins-plugin-cli --plugins blueocean
+# json-path-api plugin https://plugins.jenkins.io/json-path-api/releases/
+RUN jenkins-plugin-cli --plugins json-path-api:2.9.0-58.v62e3e85b_a_655
