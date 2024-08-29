@@ -11,7 +11,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-
     steps:
     - uses: actions/checkout@v3
 
@@ -29,13 +28,13 @@ jobs:
     - name: Build and start Docker Compose services
       working-directory: ./setup
       run: |
-        docker-compose build --progress=plain --no-cache
-        docker-compose up -d
+        docker compose build --progress=plain --no-cache
+        docker compose up -d
 
     - name: Display Docker build logs
       if: failure()
       working-directory: ./setup
-      run: docker compose up -d
+      run: docker compose logs
 
     - name: Wait for services to be ready
       run: sleep 30
