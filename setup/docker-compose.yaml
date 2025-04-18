@@ -9,8 +9,8 @@ volumes:
   jenkins-data:
 
 services:
-  jenkins:
-    image: jenkins/jenkins:2.452.3-lts-jdk21
+  jenkins: 
+    image: jenkins/jenkins 
     build:
       context: .
       dockerfile: Dockerfile
