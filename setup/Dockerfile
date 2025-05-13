@@ -36,5 +36,5 @@ RUN curl -L "https://github.com/docker/compose/releases/download/$(curl -fsSLI -
 USER jenkins
 
 # Install Jenkins plugins
-RUN jenkins-plugin-cli --plugins blueocean
+RUN jenkins-plugin-cli --plugins blueocean coverage:2.5.0 docker-plugin:1274.vc0203fdf2e74 docker-workflow:611.v16e84da_6d3ff maven-plugin:3.26 nodejs:1.6.4 sonar:2.18 
 # RUN jenkins-plugin-cli --plugins json-path-api:2.9.0-58.v62e3e85b_a_655
