@@ -37,4 +37,4 @@ USER jenkins
 
 # Install Jenkins plugins
 RUN jenkins-plugin-cli --plugins blueocean
-RUN jenkins-plugin-cli --plugins json-path-api:2.9.0-58.v62e3e85b_a_655
+# RUN jenkins-plugin-cli --plugins json-path-api:2.9.0-58.v62e3e85b_a_655
