@@ -11,7 +11,7 @@ RUN add-apt-repository \
 RUN apt-get update && apt-get install -y docker-ce-cli
 RUN curl -L "https://github.com/docker/compose/releases/download/`curl -fsSLI -o /dev/null -w %{url_effective} https://github.com/docker/compose/releases/latest | sed 's#.*tag/##g' && echo`/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose && \ 
     chmod +x /usr/local/bin/docker-compose && \ 
-    ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose
+    if [ ! -L /usr/bin/docker-compose ]; then ln -s /usr/local/bin/docker-compose /usr/bin/docker-compose; fi
 USER jenkins
 RUN jenkins-plugin-cli --plugins blueocean
 # json-path-api plugin https://plugins.jenkins.io/json-path-api/releases/
